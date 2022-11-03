@@ -1,0 +1,22 @@
+@mixin menu {
+    background-color: map-get($colori, 'bluNav');
+    border-radius: 12px; //variabile e modifica
+    outline: 1px solid map-get($colori, 'biancoNav');
+    box-shadow: 2px 2px 5px map-get($colori, 'arancioA');
+}
+
+@mixin btn {
+    background-color: map-get($colori, 'arancioBtn');
+    color: map-get($colori, 'biancoNav');
+    padding: 7px 10px;
+    border-top-color: map-get($colori, 'biancoNav');
+    border-left-color: map-get($colori, 'biancoNav');
+    border-right-color: map-get($colori, 'grigioOmbra');
+    border-bottom-color: map-get($colori, 'grigioOmbra');
+}
+
+@mixin mediumScreen {
+    @media screen and (min-width: 768px) {
+        @content
+    }
+}

@@ -1,0 +1,87 @@
+@import 'variabili';
+@import 'mixin';
+@import 'function';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+
+
+
+// HEADER
+body {
+    font-size: $fontInit;
+    font-family: $openSans;
+
+    @include mediumScreen {
+        font-size: em(1.2);
+    }
+}
+
+#main-menu {
+    @include menu;
+
+    li {
+        list-style: $pallini;
+        display: inline-block;
+        padding: 20px;
+    }
+
+    a {
+        color: map-get($colori, 'biancoNav');
+        text-decoration: $decorazione;
+        font-style: $testoItalic;
+    }
+}
+
+//MAIN
+#main {
+    display: flex;
+    justify-content: center;
+
+    h1 {
+        font-family: $roboto;
+        font-size: 2em;
+    }
+
+    article {
+        flex-basis: 60%;
+    }
+
+    aside {
+        flex-basis: 15%;
+
+        li {
+            list-style: $pallini;
+            border-bottom: $tratteggio;
+            padding: 10px;
+        }
+    }
+
+    a {
+        color: map-get($colori, 'arancioA');
+        text-decoration: $decorazione;
+        font-style: $testoItalic;
+    }
+
+    button {
+        @include btn;
+    }
+}
+
+input {
+    border: 2px solid transparent;
+    border-bottom: 1px solid grey;
+    margin-bottom: 12px;
+
+    &:hover,
+    &:focus {
+        outline: 2px solid map-get($colori, 'azzurroBordo');
+
+    }
+}
+
+//FOOTER
+
+#footer {
+    height: 80px;
+    background-color: map-get($colori, 'azzurroFoo');
+}
